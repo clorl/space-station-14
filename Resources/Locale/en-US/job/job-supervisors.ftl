@@ -2,7 +2,7 @@
 job-supervisors-captain = the captain
 job-supervisors-hop = the head of personnel
 job-supervisors-hop-qm = the quartermaster and head of personnel
-job-supervisors-hos = the head of security
+job-supervisors-hos = the site commander
 job-supervisors-ce = the chief engineer
 job-supervisors-cmo = the chief medical officer
 job-supervisors-rd = the research director
@@ -12,3 +12,7 @@ job-supervisors-medicine = medical doctors, chemists, and the chief medical offi
 job-supervisors-security = security officers, the warden, and the head of security
 job-supervisors-hire = whoever hires you
 job-supervisors-everyone = absolutely everyone
+
+job-supervisors-director = the site director
+job-supervisors-management = board of directors
+

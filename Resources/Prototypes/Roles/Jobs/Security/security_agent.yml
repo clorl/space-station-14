@@ -1,0 +1,31 @@
+- type: job
+  id: SecurityAgent
+  name: job-name-security
+  startingGear: SecurityAgentGear
+  departments:
+  - Security
+  icon: "SecurityOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+
+- type: startingGear
+  id: SecurityAgentGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHelmetHelmetOld
+    outerClothing: ClothingOuterVestKevlar
+    id: SecurityPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

@@ -65,3 +65,9 @@
   config:
     !type:GenericGameRuleConfiguration
     id: Zombie
+
+- type: gameRule
+  id: Containment
+  config:
+    !type:GenericGameRuleConfiguration
+    id: Containment

@@ -255,6 +255,19 @@ namespace Content.Shared.CCVar
             CVarDef.Create("suspicion.max_time_seconds", 300);
 
         /*
+         * Containment
+         */
+
+        public static readonly CVarDef<int> ContainmentMinPlayers =
+            CVarDef.Create("traitor.min_players", 5);
+
+        public static readonly CVarDef<int> ContainmentMaxAnomalies =
+            CVarDef.Create("traitor.max_traitors", 10);
+
+        public static readonly CVarDef<int> ContainmentPlayersPerAnomaly =
+            CVarDef.Create("traitor.players_per_traitor", 3);
+
+        /*
          * Traitor
          */
 

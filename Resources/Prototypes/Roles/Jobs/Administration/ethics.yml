@@ -1,0 +1,23 @@
+- type: job
+  id: Ethics
+  name: job-name-ethics
+  startingGear: EthicsGear
+  departments:
+  - Civilian
+  icon: "Lawyer"
+  supervisors: job-supervisors-director
+  access:
+  - Service
+  - Brig
+  - Maintenance
+
+- type: startingGear
+  id: EthicsGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
+    back: ClothingBackpackBriefcaseFilled
+    shoes: ClothingShoesColorBlack
+    id: LawyerPDA
+    ears: ClothingHeadsetSecurity
+    # TODO add copy of space law
+

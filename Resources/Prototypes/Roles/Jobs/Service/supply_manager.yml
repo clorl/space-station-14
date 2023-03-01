@@ -1,0 +1,30 @@
+- type: job
+  id: SupplyManager
+  name: job-name-qm
+  weight: 10
+  startingGear: SupplyManagerGear
+  departments:
+  - Cargo
+  icon: "QuarterMaster"
+  supervisors: job-supervisors-hop
+  canBeAntag: false
+  access:
+  - Cargo
+  - Salvage
+  - Quartermaster
+  - Maintenance
+  - External
+  - Command
+
+- type: startingGear
+  id: SupplyManagerGear
+  equipment:
+    head: ClothingHeadHatCargosoft
+    jumpsuit: ClothingUniformJumpsuitQM
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBrown
+    id: QuartermasterPDA
+    ears: ClothingHeadsetQM
+  innerclothingskirt: ClothingUniformJumpskirtQM
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

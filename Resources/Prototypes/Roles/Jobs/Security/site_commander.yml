@@ -1,0 +1,37 @@
+- type: job
+  id: Commander
+  name: job-name-hos
+  weight: 10
+  startingGear: CommanderGear
+  departments:
+  - Command
+  - Security
+  icon: "HeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-director
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+
+- type: startingGear
+  id: CommanderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterCoatHoSTrench
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatBeretHoS
+    id: HoSPDA
+    ears: ClothingHeadsetAltSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtHoS
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

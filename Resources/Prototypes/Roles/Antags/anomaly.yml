@@ -1,0 +1,13 @@
+﻿- type: antag
+  id: AnomalyBase
+  name: "SCP Anomaly"
+  antagonist: true
+  setPreference: true
+  objective: ""
+
+- type: antag
+  id: Scp173Anomaly
+  name: "SCP-173"
+  antagonist: true
+  setPreference: true
+  objective: "Kill everyone."

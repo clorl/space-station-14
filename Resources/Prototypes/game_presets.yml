@@ -8,6 +8,15 @@
   description: extended-description
 
 - type: gamePreset
+  id: Containment
+  alias:
+    - extended
+    - shittersafari
+  name: containment-title
+  showInVote: true
+  description: containment-description
+
+- type: gamePreset
   id: Secret
   alias:
     - secret

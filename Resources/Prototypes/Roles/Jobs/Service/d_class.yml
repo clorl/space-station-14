@@ -1,0 +1,17 @@
+- type: job
+  id: DClass
+  name: job-name-passenger
+  startingGear: DClassGear
+  departments:
+  - Civilian
+  icon: "Passenger"
+  supervisors: job-supervisors-everyone
+  access:
+  - Maintenance
+
+- type: startingGear
+  id: DClassGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    shoes: ClothingShoesColorBlack
+    id: PassengerIDCard

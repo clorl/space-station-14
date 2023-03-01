@@ -26,6 +26,14 @@
   naming: FirstDashFirst
 
 - type: species
+  id: Scp173
+  name: "SCP-173"
+  roundStart: true
+  prototype: MobScp173
+  dollPrototype: MobScp173Dummy
+  skinColoration: TintedHues
+
+- type: species
   id: SlimePerson
   name: species-name-slime
   roundStart: true

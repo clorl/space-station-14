@@ -1,0 +1,168 @@
+﻿- type: entity
+  save: false
+  name: SCP-173
+  id: MobScp173Base
+  description: A trademarked rocky statue.
+  abstract: true
+  noSpawn: true
+  components:
+    - type: Tag
+      tags:
+        - DoorBumpOpener
+    - type: Reactive
+      reactions:
+        - reagents: [Water, SpaceCleaner]
+          methods: [Touch]
+          effects:
+            - !type:WashCreamPieReaction
+    - type: Polymorphable
+    - type: Hands
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 10.0
+      baseSprintSpeed: 20.0
+    - type: MovedByPressure
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Icon
+      sprite: Mobs/Species/Scp173/parts.rsi
+      state: full
+    - type: Sprite
+      netsync: false
+      noRot: true
+      drawdepth: Mobs
+      layers:
+        - map: [ "enum.HumanoidVisualLayers.Chest" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: torso_m
+        - map: [ "enum.HumanoidVisualLayers.Head" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: head_m
+        - map: [ "enum.HumanoidVisualLayers.RArm" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_arm
+        - map: [ "enum.HumanoidVisualLayers.LArm" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_arm
+        - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_leg
+        - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_leg
+        - map: [ "enum.HumanoidVisualLayers.LHand" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_hand
+        - map: [ "enum.HumanoidVisualLayers.RHand" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_hand
+        - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_foot
+        - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+          color: "#e8b59b"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_foot
+    - type: Physics
+      bodyType: KinematicController
+    - type: Fixtures
+      fixtures:
+        - shape:
+            !type:PhysShapeAabb
+            bounds: "-0.2,-1,0.2,1"
+          mass: 70
+          restitution: 0.0
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: Body
+      template: HumanoidTemplate
+      preset: HumanPreset
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTypeTrigger
+            damageType: Blunt
+            damage: 4000
+          behaviors:
+            - !type:GibBehavior { }
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        60: 0.7
+        80: 0.5
+    - type: CombatMode
+    - type: Climbing
+    - type: AnimationPlayer
+    - type: MeleeWeapon
+      hitSound:
+        collection: Punch
+      range: 0.8
+      arcwidth: 30
+      arc: fist
+      damage:
+        types:
+          Blunt: 5
+    - type: Pullable
+    - type: DoAfter
+    - type: Puller
+
+- type: entity
+  save: false
+  name: SCP-173
+  parent: MobHumanDummy
+  id: MobScp173Dummy
+  noSpawn: true
+  components:
+    - type: Sprite
+      netsync: false
+      drawdepth: Mobs
+      layers:
+        - map: [ "enum.HumanoidVisualLayers.Chest" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: torso_m
+        - map: [ "enum.HumanoidVisualLayers.Head" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: head_m
+        - map: [ "enum.HumanoidVisualLayers.RArm" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_arm
+        - map: [ "enum.HumanoidVisualLayers.LArm" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_arm
+        - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_leg
+        - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_leg
+        - map: [ "enum.HumanoidVisualLayers.LHand" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_hand
+        - map: [ "enum.HumanoidVisualLayers.RHand" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_hand
+        - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: l_foot
+        - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+          color: "#b8b8b8"
+          sprite: Mobs/Species/Scp173/parts.rsi
+          state: r_foot

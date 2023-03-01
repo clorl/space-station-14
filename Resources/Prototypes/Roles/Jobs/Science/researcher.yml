@@ -1,0 +1,24 @@
+- type: job
+  id: Scientist
+  name: job-name-scientist
+  startingGear: ScientistGear
+  departments:
+  - Science
+  icon: "Scientist"
+  supervisors: job-supervisors-hop
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: ScientistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitScientist
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLab
+    id: SciencePDA
+    ears: ClothingHeadsetScience
+  innerclothingskirt: ClothingUniformJumpskirtScientist
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled

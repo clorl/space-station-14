@@ -1,0 +1,30 @@
+- type: job
+  id: Director
+  name: job-name-director
+  weight: 20
+  startingGear: DirectorGear
+  departments:
+  - Command
+  icon: "Captain"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-management
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+
+- type: startingGear
+  id: DirectorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptain
+    back: ClothingBackpackCaptainFilled
+    shoes: ClothingShoesColorBlack
+    head: ClothingHeadHatCaptain
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+    outerClothing: ClothingOuterArmorCaptainCarapace
+    id: CaptainPDA
+    ears: ClothingHeadsetAltCommand
+  innerclothingskirt: ClothingUniformJumpskirtCaptain
+  satchel: ClothingBackpackSatchelCaptainFilled
+  duffelbag: ClothingBackpackDuffelCaptainFilled
