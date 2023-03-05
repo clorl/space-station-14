@@ -527,7 +527,7 @@
       - potatoes
       - carrot
   - type: Sprite
-    state: BourguignonBeef
+    state: bourguignon
   - type: SolutionContainerManager
     solutions:
       food:

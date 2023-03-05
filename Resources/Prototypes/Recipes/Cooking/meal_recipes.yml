@@ -964,7 +964,7 @@
 - type: microwaveMealRecipe
   id: RecipeBourguignionBeef
   name: bourguignion beef recipe
-  result: FoodBourguignionBeef
+  result: FoodMealBourguignonBeef
   time: 30
   reagents:
     Wine: 10
@@ -972,7 +972,7 @@
     FoodMeat: 1
     FoodCarrot: 1
     FoodPotato: 1
-    FoodMushroom: 5
+    FoodMushroom: 1
     FoodPlate : 1
 
 # SALADS: These should be moved out of the microwave as soon as possible
