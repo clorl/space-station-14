@@ -512,3 +512,30 @@
           - ReagentId: CapsaicinOil
             Quantity: 6
 # What do Europeans eat instead of enchiladas? 25.4 millimeter-iladas.
+
+- type: entity
+  name: Bourguignon Beef
+  parent: FoodMealBase
+  id: FoodMealBourguignonBeef
+  description: Famous french stew that is supposed to take hours to cook.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - wine
+      - meaty
+      - mushroom
+      - potatoes
+      - carrot
+  - type: Sprite
+    state: BourguignonBeef
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 8
+        - ReagentId: Wine
+          Quantity: 5
+#taste like meat, mushroom, carrots, potato and wine

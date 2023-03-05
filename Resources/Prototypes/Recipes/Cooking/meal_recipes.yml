@@ -960,6 +960,21 @@
     FoodMeatCutlet: 1
     FoodCorn: 1
 
+#French cuisine
+- type: microwaveMealRecipe
+  id: RecipeBourguignionBeef
+  name: bourguignion beef recipe
+  result: FoodBourguignionBeef
+  time: 30
+  reagents:
+    Wine: 10
+  solids:
+    FoodMeat: 1
+    FoodCarrot: 1
+    FoodPotato: 1
+    FoodMushroom: 5
+    FoodPlate : 1
+
 # SALADS: These should be moved out of the microwave as soon as possible
 - type: microwaveMealRecipe
   id: RecipeHerbSalad
