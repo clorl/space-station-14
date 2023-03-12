@@ -61,6 +61,36 @@
 
 # Pizza
 
+
+- type: entity
+  name: flammenkuche pizza
+  parent: FoodPizzaBase
+  id: FoodPizzaFlammenkuche
+  description: Be square or be flammed.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - creamy
+      - meaty
+  - type: Sprite
+    layers:
+    - state: flammenkuche
+  - type: SliceableFood
+    slice: FoodPizzaFlammenkucheSlice
+
+- type: entity
+  name: slice of flammenkuche
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaFlammenkucheSlice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - creamy
+      - meaty
+  - type: Sprite
+    layers:
+    - state: flammenkuche-slice
+
 - type: entity
   name: margherita pizza
   parent: FoodPizzaBase

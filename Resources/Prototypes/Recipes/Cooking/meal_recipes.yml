@@ -975,6 +975,18 @@
     FoodMushroom: 1
     FoodPlate : 1
 
+- type: microwaveMealRecipe
+  id: RecipeFlammenkuche
+  name: flammenkuche recipe
+  result: FoodPizzaFlammenkuche
+  time: 10
+  reagents:
+    Milk: 10
+  solids:
+    FoodMeatCutlet: 1
+    FoodDough: 1
+    FoodPlate : 1
+
 # SALADS: These should be moved out of the microwave as soon as possible
 - type: microwaveMealRecipe
   id: RecipeHerbSalad
