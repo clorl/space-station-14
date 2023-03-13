@@ -149,9 +149,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem
 
     private void OnPlayersSpawned(RulePlayerJobsAssignedEvent ev)
     {
-<<<<<<< HEAD
-
-=======
         if (!RuleAdded)
             return;
 
@@ -316,7 +313,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem
         {
             MakeTraitor(ev.Player);
         }
->>>>>>> master
     }
 
     private void OnRoundEndText(RoundEndTextAppendEvent ev)
