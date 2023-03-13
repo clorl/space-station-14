@@ -2,6 +2,7 @@
   id: FieldAgent
   name: job-name-field-agent
   startingGear: FieldAgentGear
+  playTimeTracker: JobFieldAgent
   departments:
   - Security
   icon: "SecurityOfficer"

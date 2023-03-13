@@ -4,7 +4,7 @@ meta:
   author: Topy
   postmapinit: false
 tilemap:
-  0: space
+  0: plating
   1: FloorArcadeBlue
   2: FloorArcadeBlue2
   3: FloorArcadeRed
@@ -59,7 +59,6 @@ tilemap:
   52: floor_white
   53: floor_wood
   54: lattice
-  55: plating
 grids:
 - settings:
     chunksize: 16

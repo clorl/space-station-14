@@ -2,6 +2,7 @@
   id: DClass
   name: job-name-passenger
   startingGear: DClassGear
+  playTimeTracker: JobDClass
   departments:
   - Civilian
   icon: "Passenger"

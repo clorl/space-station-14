@@ -2,6 +2,7 @@
   id: SecurityAgent
   name: job-name-security
   startingGear: SecurityAgentGear
+  playTimeTracker: JobSecurityAgent
   departments:
   - Security
   icon: "SecurityOfficer"

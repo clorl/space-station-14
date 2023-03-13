@@ -2,6 +2,7 @@
   id: Technician
   name: job-name-tech
   startingGear: TechnicianGear
+  playTimeTracker: JobTechnician
   departments:
   - Engineering
   icon: "StationEngineer"

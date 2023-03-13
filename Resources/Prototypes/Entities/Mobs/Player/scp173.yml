@@ -14,8 +14,6 @@
       showExamineInfo: true
     - type: Input
       context: "human"
-    - type: PlayerMobMover
-    - type: PlayerInputMover
     - type: Alerts
     - type: Actions
     - type: Eye

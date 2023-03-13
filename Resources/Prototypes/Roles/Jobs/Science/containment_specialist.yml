@@ -2,6 +2,7 @@
   id: ContainmentSpecialist
   name: job-name-scientist
   startingGear: ContainmentSpecialistGear
+  playTimeTracker: JobContainmentSpecialist
   departments:
   - Science
   icon: "Scientist"

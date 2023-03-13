@@ -3,6 +3,7 @@
   name: job-name-qm
   weight: 10
   startingGear: SupplyManagerGear
+  playTimeTracker: JobSupplyManager
   departments:
   - Cargo
   icon: "QuarterMaster"

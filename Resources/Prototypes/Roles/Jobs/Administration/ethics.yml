@@ -2,6 +2,7 @@
   id: Ethics
   name: job-name-ethics
   startingGear: EthicsGear
+  playTimeTracker: JobEthics
   departments:
   - Civilian
   icon: "Lawyer"

@@ -3,6 +3,7 @@
   name: job-name-hos
   weight: 10
   startingGear: CommanderGear
+  playTimeTracker: JobCommander
   departments:
   - Command
   - Security
