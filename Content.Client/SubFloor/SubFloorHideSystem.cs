@@ -5,7 +5,7 @@ namespace Content.Client.SubFloor;
 
 public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
 {
-    [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     private bool _showAll;
 
@@ -34,8 +34,8 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         if (args.Sprite == null)
             return;
 
-        args.Component.TryGetData(SubFloorVisuals.Covered, out bool covered);
-        args.Component.TryGetData(SubFloorVisuals.ScannerRevealed, out bool scannerRevealed);
+        _appearance.TryGetData<bool>(uid, SubFloorVisuals.Covered, out var covered, args.Component);
+        _appearance.TryGetData<bool>(uid, SubFloorVisuals.ScannerRevealed, out var scannerRevealed, args.Component);
 
         scannerRevealed &= !ShowAll; // no transparency for show-subfloor mode.
 
@@ -46,35 +46,33 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         foreach (var layer in args.Sprite.AllLayers)
         {
             // pipe connection visuals are updated AFTER this, and may re-hide some layers
-            layer.Visible = revealed; 
+            layer.Visible = revealed;
 
             if (layer.Visible)
                 layer.Color = layer.Color.WithAlpha(transparency);
         }
 
         // Is there some layer that is always visible?
-        if (args.Sprite.LayerMapTryGet(SubfloorLayers.FirstLayer, out var firstLayer))
+        var hasVisibleLayer = false;
+        foreach (var layerKey in component.VisibleLayers)
         {
-            var layer = args.Sprite[firstLayer];
+            if (!args.Sprite.LayerMapTryGet(layerKey, out var layerIndex))
+                continue;
+
+            var layer = args.Sprite[layerIndex];
             layer.Visible = true;
             layer.Color = layer.Color.WithAlpha(1f);
-            args.Sprite.Visible = true;
-            return;
+            hasVisibleLayer = true;
         }
 
-        args.Sprite.Visible = revealed;
+        args.Sprite.Visible = hasVisibleLayer || revealed;
     }
 
     private void UpdateAll()
     {
         foreach (var (_, appearance) in EntityManager.EntityQuery<SubFloorHideComponent, AppearanceComponent>(true))
         {
-            _appearanceSystem.MarkDirty(appearance);
+            _appearance.MarkDirty(appearance, true);
         }
     }
-}
-
-public enum SubfloorLayers : byte
-{
-    FirstLayer, // always visible. E.g. vent part of a vent..
 }

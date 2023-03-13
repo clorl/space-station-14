@@ -1,9 +1,15 @@
 - type: job
   id: Psychologist
   name: job-name-psychologist
+<<<<<<<< HEAD:Resources/Prototypes/Roles/Jobs/Service/psychologist.yml
   startingGear: PsychologistGear
   departments:
   - Medical
+========
+  description: job-description-psychologist
+  playTimeTracker: JobPsychologist
+  startingGear: PsychologistGear
+>>>>>>>> master:Resources/Prototypes/Roles/Jobs/Wildcards/psychologist.yml
   icon: "Psychologist"
   supervisors: job-supervisors-cmo
   access:

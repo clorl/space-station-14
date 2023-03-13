@@ -1,32 +1,16 @@
-using Content.Shared.CCVar;
-using Content.Shared.Examine;
-using Content.Shared.Interaction;
+using Content.Server.Body.Systems;
+using Content.Shared.Body.Components;
 using Content.Shared.Damage;
-using Content.Shared.Damage;
-using Content.Server.Body.Components;
-using Robust.Server.Maps;
-using Robust.Shared.Configuration;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
-using Robust.Shared.Log;
-using Robust.Shared.Map;
-using Robust.Shared.Maths;
-using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Robust.Shared.Timing;
-using Robust.Shared.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.CodeAnalysis;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Server.Salvage;
 
 public sealed class SalvageMobRestrictionsSystem : EntitySystem
 {
+    [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -50,7 +34,7 @@ public sealed class SalvageMobRestrictionsSystem : EntitySystem
         {
             rg = AddComp<SalvageMobRestrictionsGridComponent>(gridUid);
         }
-        rg!.MobsToKill.Add(uid);
+        rg.MobsToKill.Add(uid);
         component.LinkedGridEntity = gridUid;
     }
 
@@ -70,14 +54,15 @@ public sealed class SalvageMobRestrictionsSystem : EntitySystem
         foreach (var target in component.MobsToKill)
         {
             if (Deleted(target, metaQuery)) continue;
+            if (_mobStateSystem.IsDead(target)) continue; // DONT WASTE BIOMASS
             if (bodyQuery.TryGetComponent(target, out var body))
             {
                 // Just because.
-                body.Gib();
+                _bodySystem.GibBody(target, body: body);
             }
             else if (damageQuery.TryGetComponent(target, out var damageableComponent))
             {
-                _damageableSystem.SetAllDamage(damageableComponent, 200);
+                _damageableSystem.SetAllDamage(target, damageableComponent, 200);
             }
         }
     }
