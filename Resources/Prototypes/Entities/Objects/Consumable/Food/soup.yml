@@ -986,11 +986,10 @@
   name: french onion soup
   parent: FoodBowlBase
   id: FoodSoupOnion
-  description: Good enough to make a grown mime cry.
+  description: Good enough to make a grown mime cry. It is said to cancel effects of alcohol.
   components:
   - type: Sprite
     layers:
-    - state: bowl
     - state: onion
   - type: SolutionContainerManager
     solutions:
@@ -1003,6 +1002,8 @@
             Quantity: 5
           - ReagentId: Allicin
             Quantity: 5
+          - ReagentId: Ethylredoxrazine
+            Quantity: 1
 # Tastes like onion, france.
 
 - type: entity

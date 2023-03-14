@@ -38,6 +38,9 @@
       "name": "bourguignon"
     },
     {
+      "name": "britton-crepe"
+    },
+    {
       "name": "butterbiscuit"
     },
     {
@@ -47,7 +50,13 @@
       "name": "butteronastick"
     },
     {
+      "name": "cheese-omelette"
+    },
+    {
       "name": "cornedbeef"
+    },
+    {
+      "name": "croque-monsieur"
     },
     {
       "name": "cubancarp"
@@ -78,6 +87,12 @@
     },
     {
       "name": "fries-parsnip"
+    },
+    {
+      "name": "gromelette"
+    },
+    {
+      "name": "hachi-parmentier"
     },
     {
       "name": "hotdog"
@@ -130,6 +145,9 @@
 	{
 	  "name": "queso"
 	},
+    {
+      "name": "ratatouille"
+    },
     {
       "name": "sashimi"
     },

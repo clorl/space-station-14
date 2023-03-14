@@ -987,6 +987,108 @@
     FoodDough: 1
     FoodPlate : 1
 
+- type: microwaveMealRecipe
+  id: RecipeQuiche
+  name: quiche recipe
+  result: FoodQuiche
+  time: 20
+  reagents:
+    Milk: 10
+  solids:
+    FoodPieDough: 1
+    FoodMeatCutlet: 2
+    FoodPlateTin: 1
+
+- type: microwaveMealRecipe
+  id: RecipeCroqueMonsieur
+  name: croque-monsieur recipe
+  result: FoodCroqueMonsieur
+  time: 10
+  solids:
+    FoodBreadPlainSlice: 2
+    FoodMeatCutlet: 1
+    FoodCheeseSlice: 1
+    FoodPlate : 1
+
+- type: microwaveMealRecipe
+  id: RecipeRatatouille
+  name: ratatouille recipe
+  result: FoodRatatouille
+  time: 20
+  solids:
+    FoodEggplant: 1
+    FoodTomato: 1
+    FoodOnionSlice: 2
+    FoodPlate : 1
+
+- type: microwaveMealRecipe
+  id: RecipeOnionSoup
+  name: onion soup recipe
+  result: FoodOnionSoup
+  time: 10
+  reagents:
+    Water: 10
+    Blackpepper: 5
+  solids:
+    FoodOnion: 1
+    FoodBreadPlainSlice: 2
+    FoodBowlBig: 1
+
+- type: microwaveMealRecipe
+  id: RecipeOmelette
+  name: omelette recipe
+  result: FoodOmelette
+  time: 10
+  solids:
+    FoodEgg: 12
+    FoodPlate : 1
+
+- type: microwaveMealRecipe
+  id: RecipeOmeletteDuFromage
+  name: omelette du fromage recipe
+  result: FoodOmeletteDuFromage
+  time: 10
+  solids:
+    FoodEgg: 12
+    FoodCheeseSlice: 1
+    FoodPlate : 1
+
+- type: microwaveMealRecipe
+  id: RecipeGromelette
+  name: gromelette recipe
+  result: FoodGromelette
+  time: 10
+  solids:
+    FoodEgg: 24
+    FoodMushroom: 2
+    FoodPotato: 1
+    FoodMeatCutlet: 2
+    FoodButter: 1
+    FoodPlate : 1
+
+- type: microwaveMealRecipe
+  id: RecipeHachiParmentier
+  name: hachi parmentier recipe
+  result: FoodHachiParmentier
+  time: 15
+  solids:
+    FoodPotato: 1
+    FoodMeatCutlet: 3
+    FoodPlate : 1
+
+- type: microwaveMealRecipe
+  id: RecipeBrittonCrepe
+  name: Britton Crepe recipe
+  result: FoodBrittonCrepe
+  time: 10
+  solids:
+    FoodDough: 1
+    FoodEgg: 1
+    FoodOnionSlice: 2
+    FoodMushroom : 2
+    FoodMeatCutlet: 1
+    FoodPlate : 1
+
 # SALADS: These should be moved out of the microwave as soon as possible
 - type: microwaveMealRecipe
   id: RecipeHerbSalad

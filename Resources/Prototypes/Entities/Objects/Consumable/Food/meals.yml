@@ -513,6 +513,8 @@
             Quantity: 6
 # What do Europeans eat instead of enchiladas? 25.4 millimeter-iladas.
 
+
+#SORT BY ALPHABETICAL AFTERWARD
 - type: entity
   name: Bourguignon Beef
   parent: FoodMealBase
@@ -539,3 +541,162 @@
         - ReagentId: Wine
           Quantity: 5
 #taste like meat, mushroom, carrots, potato and wine
+
+- type: entity
+  name: Croque Monsieur
+  parent: FoodMealBase
+  id: FoodMealCroqueMonsieur
+  description: Here is the "Croque", sir.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - meat
+      - cheese
+  - type: Sprite
+    state: croque-monsieur
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 2
+# Tastes like bread, meat and cheese.
+
+- type: entity
+  name: Ratatouille
+  parent: FoodMealBase
+  id: FoodMealRatatouille
+  description: Not actually made out of rats.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - eggplant
+      - tomato
+      - onion
+  - type: Sprite
+    state: ratatouille
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+# Tastes like eggplant, tomato and onion.
+
+- type: entity
+  name: omelette
+  parent: FoodMealBase
+  id: FoodMealOmelette
+  description: a basic omelette in case of emergency and surplus of eggs.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - egg
+  - type: Sprite
+    state: omelette
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+# Tastes like egg.
+
+- type: entity
+  name: cheesy omelette
+  parent: FoodMealBase
+  id: FoodMealCheesyOmelette
+  description: omelette du fromage.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - egg
+      - chessy
+  - type: Sprite
+    state: cheese-omelette
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+# Tastes like egg and cheese.
+
+- type: entity
+  name: Gromelette
+  parent: FoodMealBase
+  id: FoodMealGromelette
+  description: a massive omelette for people with massive stomach.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - egg
+      - mushroom
+      - meaty
+      - potato
+      - butter
+  - type: Sprite
+    state: gromelette
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+# Tastes like egg, mushroom, meat, potato and butter.
+
+- type: entity
+  name: hachi parmentier
+  parent: FoodMealBase
+  id: FoodMealHachiarmentier
+  description: a layer of purée on a layer of mashed meat.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - potato
+      - meaty
+  - type: Sprite
+    state: hachi-parmentier
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 5
+# Tastes like potato and meat.
+
+- type: entity
+  name: britton crepe
+  parent: FoodMealBase
+  id: FoodMealBrittonCrepe
+  description: an odd meal from an odd place. Based on a weird salty crepe.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - dough
+      - egg
+      - mushroom
+      - meaty
+  - type: Sprite
+    state: britton-crepe
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 2
+# Tastes like dough, egg, mushroom and meat.
