@@ -1,0 +1,91 @@
+# Ores
+# - Low value
+- type: salvageLoot
+  id: OreTin
+  desc: Veins of steel
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OreTin
+        Lava: BasaltOreTin
+        Snow: SnowOreTin
+
+- type: salvageLoot
+  id: OreQuartz
+  desc: Veins of quartz
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OreQuartz
+        Lava: BasaltOreQuartz
+        Snow: SnowOreQuartz
+
+# - Medium value
+- type: salvageLoot
+  id: OreGold
+  desc: Veins of gold ore
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OreGold
+        Lava: BasaltOreGold
+        Snow: SnowOreGold
+
+- type: salvageLoot
+  id: OreSilver
+  desc: Veins of silver ore
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OreSilver
+        Lava: BasaltOreSilver
+        Snow: SnowOreSilver
+
+# - High value
+- type: salvageLoot
+  id: OrePlasma
+  desc: Veins of plasma ore
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OrePlasma
+        Lava: BasaltOrePlasma
+        Snow: SnowOrePlasma
+
+- type: salvageLoot
+  id: OreUranium
+  desc: Veins of uranium ore
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OreUranium
+        Lava: BasaltOreUranium
+        Snow: SnowOreUranium
+
+- type: salvageLoot
+  id: OreBananium
+  desc: Veins of bananium ore
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OreBananium
+        Lava: BasaltOreBananium
+        Snow: SnowOreBananium
+
+- type: salvageLoot
+  id: OreArtifactFragment
+  desc: artifact fragment-embedded rock
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto:
+        Grasslands: OreArtifactFragment
+        Lava: BasaltOreArtifactFragment
+        Snow: SnowOreArtifactFragment

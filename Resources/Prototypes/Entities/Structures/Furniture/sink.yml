@@ -11,11 +11,16 @@
   - type: Sprite
     sprite: Structures/Furniture/sink.rsi
     state: sink_stem
-    netsync: false
   - type: SolutionContainerManager
     solutions:
       tank:
         maxVol: 500
+  - type: SolutionRegeneration
+    solution: tank
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
   - type: DrainableSolution
     solution: tank
   - type: ReagentTank
@@ -61,7 +66,6 @@
   - type: Sprite
     sprite: Structures/Furniture/sink.rsi
     state: sink_wide
-    netsync: false
 
 #Stemless Sink
 
@@ -73,7 +77,6 @@
   - type: Sprite
     sprite: Structures/Furniture/sink.rsi
     state: sink
-    netsync: false
 
 - type: entity
   name: sink

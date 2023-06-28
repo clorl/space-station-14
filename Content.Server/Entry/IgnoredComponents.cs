@@ -18,7 +18,9 @@ namespace Content.Server.Entry
             "HandheldGPS",
             "CableVisualizer",
             "UIFragment",
-            "PDABorderColor",
+            "PdaBorderColor",
+            "InventorySlots",
+            "LightFade",
         };
     }
 }

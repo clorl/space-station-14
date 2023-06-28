@@ -7,7 +7,6 @@
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite
-      netsync: false
       sprite: Objects/Weapons/Guns/Turrets/turrets.rsi
       drawdepth: WallMountedItems
       layers:
@@ -24,7 +23,8 @@
     - type: Actions
     - type: Fixtures
       fixtures:
-        - shape:
+        fix1:
+          shape:
             !type:PhysShapeAabb
             bounds: "-0.45,-0.45,0.45,0.45"
           density: 60
@@ -36,7 +36,6 @@
       containers:
         ballistic-ammo: !type:Container
     - type: Sprite
-      netsync: false
       sprite: Objects/Weapons/Guns/Turrets/turrets.rsi
       drawdepth: WallMountedItems
       layers:
@@ -132,7 +131,6 @@
       factions:
         - Xeno
     - type: Sprite
-      netsync: false
       sprite: Objects/Weapons/Guns/Turrets/xenoturret.rsi
       noRot: true
       layers:

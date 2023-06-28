@@ -9,7 +9,6 @@
     - Disposal
   components:
   - type: Sprite
-    netsync: false
     sprite: Structures/Piping/disposal.rsi
     snapCardinals: true
     layers:
@@ -33,14 +32,15 @@
     bodyType: Static
   - type: Fixtures
     fixtures:
-    - shape:
-        !type:PhysShapeAabb
-        bounds: "-0.25,-0.4,0.25,0.4"
-      density: 75
-      mask:
-      - MachineMask
-      layer:
-      - MachineLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 75
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: Destructible
     thresholds:
     - trigger:
@@ -99,7 +99,6 @@
   description: A pneumatic mail delivery unit.
   components:
   - type: Sprite
-    netsync: false
     sprite: Structures/Piping/disposal.rsi
     layers:
       - state: conmailing
@@ -134,6 +133,8 @@
     transmitFrequencyId: MailingUnit
   - type: WiredNetworkConnection
   - type: Configuration
+    config:
+      tag:
   - type: Appearance
   - type: UserInterface
     interfaces:

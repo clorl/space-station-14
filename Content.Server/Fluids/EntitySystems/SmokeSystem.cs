@@ -45,7 +45,6 @@ public sealed class SmokeSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<SmokeComponent, EntityUnpausedEvent>(OnSmokeUnpaused);
-        SubscribeLocalEvent<SmokeComponent, MapInitEvent>(OnSmokeMapInit);
         SubscribeLocalEvent<SmokeComponent, ReactionAttemptEvent>(OnReactionAttempt);
         SubscribeLocalEvent<SmokeComponent, SpreadNeighborsEvent>(OnSmokeSpread);
         SubscribeLocalEvent<SmokeDissipateSpawnComponent, TimedDespawnEvent>(OnSmokeDissipate);
@@ -73,7 +72,6 @@ public sealed class SmokeSystem : EntitySystem
     private void OnSmokeSpread(EntityUid uid, SmokeComponent component, ref SpreadNeighborsEvent args)
     {
         if (component.SpreadAmount == 0 ||
-            args.Grid == null ||
             !_solutionSystem.TryGetSolution(uid, SmokeComponent.SolutionName, out var solution) ||
             args.NeighborFreeTiles.Count == 0)
         {
@@ -94,9 +92,9 @@ public sealed class SmokeSystem : EntitySystem
         var smokePerSpread = component.SpreadAmount / args.NeighborFreeTiles.Count;
         component.SpreadAmount -= smokePerSpread;
 
-        foreach (var tile in args.NeighborFreeTiles)
+        foreach (var neighbor in args.NeighborFreeTiles)
         {
-            var coords = args.Grid.GridTileToLocal(tile);
+            var coords = neighbor.Grid.GridTileToLocal(neighbor.Tile);
             var ent = Spawn(prototype.ID, coords.SnapToGrid());
             var neighborSmoke = EnsureComp<SmokeComponent>(ent);
             neighborSmoke.SpreadAmount = Math.Max(0, smokePerSpread - 1);
@@ -167,11 +165,6 @@ public sealed class SmokeSystem : EntitySystem
         }
     }
 
-    private void OnSmokeMapInit(EntityUid uid, SmokeComponent component, MapInitEvent args)
-    {
-        component.NextReact = _timing.CurTime;
-    }
-
     private void OnSmokeUnpaused(EntityUid uid, SmokeComponent component, ref EntityUnpausedEvent args)
     {
         component.NextReact += args.PausedTime;
@@ -222,25 +215,7 @@ public sealed class SmokeSystem : EntitySystem
             if (reagentQuantity.Quantity == FixedPoint2.Zero)
                 continue;
 
-            var reagent = _prototype.Index<ReagentPrototype>(reagentQuantity.ReagentId);
-
-            // React with the tile the effect is on
-            // We don't multiply by solutionFraction here since the tile is only ever reacted once
-            if (!component.ReactedTile)
-            {
-                reagent.ReactionTile(tile, reagentQuantity.Quantity);
-                component.ReactedTile = true;
-            }
-
-            // Touch every entity on tile.
-            foreach (var entity in ents)
-            {
-                if (entity == uid)
-                    continue;
-
-                _reactive.ReactionEntity(entity, ReactionMethod.Touch, reagent,
-                    reagentQuantity.Quantity * solutionFraction, solution);
-            }
+            // NOOP, react with entities on the tile or whatever.
         }
 
         foreach (var entity in ents)
@@ -266,32 +241,8 @@ public sealed class SmokeSystem : EntitySystem
 
     private void ReactWithEntity(EntityUid entity, Solution solution, double solutionFraction)
     {
-        if (!TryComp<BloodstreamComponent>(entity, out var bloodstream))
-            return;
-
-        if (TryComp<InternalsComponent>(entity, out var internals) &&
-            _internals.AreInternalsWorking(internals))
-        {
-            return;
-        }
-
-        var cloneSolution = solution.Clone();
-        var transferAmount = FixedPoint2.Min(cloneSolution.Volume * solutionFraction, bloodstream.ChemicalSolution.AvailableVolume);
-        var transferSolution = cloneSolution.SplitSolution(transferAmount);
-
-        foreach (var reagentQuantity in transferSolution.Contents.ToArray())
-        {
-            if (reagentQuantity.Quantity == FixedPoint2.Zero)
-                continue;
-
-            _reactive.ReactionEntity(entity, ReactionMethod.Ingestion, reagentQuantity.ReagentId, reagentQuantity.Quantity, transferSolution);
-        }
-
-        if (_blood.TryAddToChemicals(entity, transferSolution, bloodstream))
-        {
-            // Log solution addition by smoke
-            _logger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(entity):target} was affected by smoke {SolutionContainerSystem.ToPrettyString(transferSolution)}");
-        }
+        // NOOP due to people complaining constantly.
+        return;
     }
 
     /// <summary>
