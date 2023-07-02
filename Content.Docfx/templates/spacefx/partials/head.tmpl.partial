@@ -1,0 +1,34 @@
+<head>
+    <meta charset="utf-8">
+    {{#redirect_url}}
+    <meta content="0;URL='{{redirect_url}}'" http-equiv="refresh">
+    {{/redirect_url}}
+    
+    {{^redirect_url}}
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}}
+        {{/_appTitle}}</title>
+    <meta content="width=device-width" name="viewport">
+    <meta
+        content="{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}"
+        name="title">
+    {{#_description}}
+    <meta content="{{_description}}" name="description">
+    {{/_description}}
+    <link href="{{_rel}}{{{_appFaviconPath}}}{{^_appFaviconPath}}favicon.ico{{/_appFaviconPath}}" rel="shortcut icon">
+    <link href="{{_rel}}styles/docfx.vendor.min.css" rel="stylesheet">
+    <link href="{{_rel}}styles/docfx.css" rel="stylesheet">
+    <link href="{{_rel}}styles/main.css" rel="stylesheet">
+    <meta content="{{_navRel}}" property="docfx:navrel">
+    <meta content="{{_tocRel}}" property="docfx:tocrel">
+    {{#_noindex}}
+    <meta content="noindex" name="searchOption">
+    {{/_noindex}}
+    {{#_enableSearch}}
+    <meta content="{{_rel}}" property="docfx:rel">
+    {{/_enableSearch}}
+    {{#_enableNewTab}}
+    <meta content="true" property="docfx:newtab">
+    {{/_enableNewTab}}
+    {{/redirect_url}}
+</head>

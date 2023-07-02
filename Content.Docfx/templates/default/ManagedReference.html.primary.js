@@ -2,9 +2,14 @@
 
 var mrefCommon = require('./ManagedReference.common.js');
 var extension = require('./ManagedReference.extension.js');
+var overwrite = require('./ManagedReference.overwrite.js');
 
 exports.transform = function (model) {
   model.yamlmime = "ManagedReference";
+
+  if (overwrite && overwrite.transform) {
+    return overwrite.transform(model);
+  }
 
   if (extension && extension.preTransform) {
     model = extension.preTransform(model);
@@ -27,6 +32,9 @@ exports.transform = function (model) {
 }
 
 exports.getOptions = function (model) {
+  if (overwrite && overwrite.getOptions) {
+    return overwrite.getOptions(model);
+  }
 
   return {
     "bookmarks": mrefCommon.getBookmarks(model)

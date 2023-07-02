@@ -1,69 +1,26 @@
 {
     "metadata": [
         {
-            "src":
-            [
+            "src": [
                 {
-                    "files": [
-                        "**.csproj"
-                    ],
-                    "exclude": [
-                        "**/bin/**",
-                        "**/obj/**",
-                        "_site/**",
-                        "**.xaml"
-                    ],
+                    "files": ["**.csproj"],
                     "src": "../Content.Client"
-                }
-            ],
-            "disableGitFeatures": false,
-            "disableDefaultFilter": false,
-            "dest": "api/Content.Client",
-            "namespaceLayout": "nested"
-        },
-        {
-            "src":
-            [
+                },
                 {
-                    "files": [
-                        "**.csproj"
-                    ],
-                    "exclude": [
-                        "**/bin/**",
-                        "**/obj/**",
-                        "_site/**",
-                        "**.xaml"
-                    ],
+                    "files": ["**.csproj"],
                     "src": "../Content.Server"
-                }
-            ],
-            "disableGitFeatures": false,
-            "disableDefaultFilter": false,
-            "dest": "api/Content.Server",
-            "namespaceLayout": "nested"
-        },
-        {
-            "src":
-            [
+                },
                 {
-                    "files": [
-                        "**.csproj"
-                    ],
-                    "exclude": [
-                        "**/bin/**",
-                        "**/obj/**",
-                        "_site/**",
-                        "**.xaml"
-                    ],
+                    "files": ["**.csproj"],
                     "src": "../Content.Shared"
                 }
             ],
-            "disableGitFeatures": false,
-            "disableDefaultFilter": false,
-            "dest": "api/Content.Shared",
+            "dest": "api/Components",
+            "filter": "filterConfig.yml",
             "namespaceLayout": "nested"
         }
     ],
+
     "build": {
         "content": [
             {
@@ -101,17 +58,31 @@
             }
         ],
         "dest": "_content-site",
-        "globalMetadataFiles": [],
-        "fileMetadataFiles": [],
         "template": [
-            "default-new",
-            "modern"
+            "spacefx"
         ],
+
+        "exportRawModel": true,
+        "rawModelOutputFolder": "logs/raw",
+        "exportViewModel": true,
+        "viewModelOutputFolder": "logs/view",
+
+        "maxParallelism": 4,
+        "disableGitFeatures": true,
+
+        "globalMetadata": {
+            "_disableAffix": true
+        },
+        "fileMetadata": {
+            "keywords": {
+                "**Component**": ["Component"]
+            }
+        },
+
         "postProcessors": [],
         "markdownEngineName": "markdig",
         "noLangKeyword": false,
         "keepFileLink": false,
-        "cleanupCacheHistory": false,
-        "disableGitFeatures": false
+        "cleanupCacheHistory": false
     }
 }

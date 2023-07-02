@@ -75,7 +75,6 @@ function groupChildren(model, category) {
     if (c.isEii) {
       var type = "eii";
     } else {
-        if (!c.type) { return true; }
       var type = c.type.toLowerCase();
     }
     if (!grouped.hasOwnProperty(type)) {
@@ -236,14 +235,12 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   }
 
   function shouldHideTitleType(vm) {
-    if (!vm.type) { return true; }
     var type = vm.type.toLowerCase();
     return ((type === 'namespace' && langs.length == 1 && (langs[0] === 'objectivec' || langs[0] === 'java' || langs[0] === 'c'))
       || ((type === 'class' || type === 'enum') && langs.length == 1 && langs[0] === 'c'));
   }
 
   function shouldHideSubtitle(vm) {
-      if (!vm.type) { return true; }
     var type = vm.type.toLowerCase();
     return (type === 'class' || type === 'namespace') && langs.length == 1 && langs[0] === 'c';
   }

@@ -1,0 +1,7 @@
+﻿# See https://dotnet.github.io/docfx/docs/dotnet-api-docs.html#filter-by-uid
+
+apiRules:
+  - include:
+      hasAttribute:
+        uid: Robust.Shared.GameObjects.RegisterComponentAttribute
+      type: Class
